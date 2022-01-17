@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         <h1>Isn't React great!</h1>
-        <div id="example" />
+        <ExampleComponent />
     </body>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

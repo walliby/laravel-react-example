@@ -5255,22 +5255,30 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _src_ReactRenderer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/ReactRenderer */ "./resources/js/src/ReactRenderer.js");
+/* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 
-__webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
+
+
+
+var components = [{
+  name: "ExampleComponent",
+  component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_ExampleComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+}];
+new _src_ReactRenderer__WEBPACK_IMPORTED_MODULE_1__["default"](components).renderAll();
 
 /***/ }),
 
@@ -5310,10 +5318,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Example.js ***!
-  \********************************************/
+/***/ "./resources/js/components/ExampleComponent.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/ExampleComponent.js ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5328,7 +5336,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Example() {
+function ExampleComponent() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -5347,11 +5355,107 @@ function Example() {
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExampleComponent);
 
 if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Example, {}), document.getElementById('example'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ExampleComponent, {}), document.getElementById('example'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/src/ReactRenderer.js":
+/*!*******************************************!*\
+  !*** ./resources/js/src/ReactRenderer.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ReactRenderer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+
+
+var ReactRenderer = /*#__PURE__*/function () {
+  function ReactRenderer(components) {
+    _classCallCheck(this, ReactRenderer);
+
+    this.components = components;
+  }
+
+  _createClass(ReactRenderer, [{
+    key: "renderAll",
+    value: function renderAll() {
+      for (var componentIndex = 0; componentIndex < this.components.length; componentIndex++) {
+        // Use this to render React components in divs using the id. Ex, <div id="MySimpleComponent"></div>
+        // let container = document.getElementById(this.components[componentIndex].name);
+        // Use this to render React components using the name as the tag. Ex, <MySimpleComponent></MySimpleComponent>
+        var containers = document.getElementsByTagName(this.components[componentIndex].name);
+
+        if (containers && containers.length > 0) {
+          for (var i = containers.length - 1; i >= 0; i--) {
+            var props = this.getPropsFromAttributes(containers[i]);
+            var element = this.components[componentIndex].component;
+
+            if (props !== null) {
+              element = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(element, props);
+            }
+
+            react_dom__WEBPACK_IMPORTED_MODULE_1__.render(element, containers[i]);
+          }
+        }
+      }
+    } // Turns the dom element's attributes into an object to use as props.
+
+  }, {
+    key: "getPropsFromAttributes",
+    value: function getPropsFromAttributes(container) {
+      var props = {};
+
+      if (container.attributes.length > 0) {
+        for (var attributeIndex = 0; attributeIndex < container.attributes.length; attributeIndex++) {
+          var attribute = container.attributes[attributeIndex];
+
+          if (this.hasJsonStructure(attribute.value)) {
+            props[attribute.name] = JSON.parse(attribute.value);
+          } else {
+            props[attribute.name] = attribute.value;
+          }
+        }
+
+        return props;
+      }
+
+      return null;
+    }
+  }, {
+    key: "hasJsonStructure",
+    value: function hasJsonStructure(str) {
+      if (typeof str !== 'string') return false;
+
+      try {
+        var result = JSON.parse(str);
+        var type = Object.prototype.toString.call(result);
+        return type === '[object Object]' || type === '[object Array]';
+      } catch (err) {
+        return false;
+      }
+    }
+  }]);
+
+  return ReactRenderer;
+}();
+
+
 
 /***/ }),
 
