@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Button } from '@evertrue/et-components'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Button } from "@evertrue/et-components";
 
-function ExampleComponent({...props}) {
+function ExampleComponent({ ...props }) {
     return (
         <div>
             <h3>These are buttons from the et component library</h3>
@@ -15,6 +15,9 @@ function ExampleComponent({...props}) {
 
 export default ExampleComponent;
 
-if (document.getElementById('example-one')) {
-    ReactDOM.render(<ExampleComponent />, document.getElementById('example-one'));
+if (document.getElementById("react-example-one")) {
+    ReactDOM.render(
+        <ExampleComponent />,
+        document.getElementById("react-example-one")
+    );
 }

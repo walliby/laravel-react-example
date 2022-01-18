@@ -18,9 +18,9 @@
     </head>
     <body class="antialiased">
         <h1>Regular blade html</h1>
-        <div id="example-one"></div>
+        <div id="react-example-one"></div>
         <div>More blade html</div>
-        <div id="example-two"></div>
+        <div id="react-example-two"></div>
     </body>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

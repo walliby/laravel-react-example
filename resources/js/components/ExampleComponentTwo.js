@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 function ExampleComponentTwo() {
     return (
@@ -7,7 +7,10 @@ function ExampleComponentTwo() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-body">I'm another React component built locally in this laravel project</div>
+                        <div className="card-body">
+                            I'm another React component built locally in this
+                            laravel project
+                        </div>
                     </div>
                 </div>
             </div>
@@ -17,6 +20,9 @@ function ExampleComponentTwo() {
 
 export default ExampleComponentTwo;
 
-if (document.getElementById('example-two')) {
-    ReactDOM.render(<ExampleComponentTwo />, document.getElementById('example-two'));
+if (document.getElementById("react-example-two")) {
+    ReactDOM.render(
+        <ExampleComponentTwo />,
+        document.getElementById("react-example-two")
+    );
 }

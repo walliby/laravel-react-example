@@ -15541,8 +15541,8 @@ function ExampleComponent(_ref) {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExampleComponent);
 
-if (document.getElementById('example-one')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ExampleComponent, {}), document.getElementById('example-one'));
+if (document.getElementById("react-example-one")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ExampleComponent, {}), document.getElementById("react-example-one"));
 }
 
 /***/ }),
@@ -15586,8 +15586,8 @@ function ExampleComponentTwo() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExampleComponentTwo);
 
-if (document.getElementById('example-two')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ExampleComponentTwo, {}), document.getElementById('example-two'));
+if (document.getElementById("react-example-two")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ExampleComponentTwo, {}), document.getElementById("react-example-two"));
 }
 
 /***/ }),
