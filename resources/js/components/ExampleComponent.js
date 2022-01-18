@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Button } from '@evertrue/et-components'
 
-function ExampleComponent() {
+function ExampleComponent({...props}) {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-body">I'm an example React component!</div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <h3>These are buttons from the et component library</h3>
+            <Button type="action">Action Button</Button>
+            <Button type="secondary">Secondary Button</Button>
+            <Button type="destroy">Destructive Button</Button>
         </div>
     );
 }
 
 export default ExampleComponent;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<ExampleComponent />, document.getElementById('example'));
+if (document.getElementById('example-one')) {
+    ReactDOM.render(<ExampleComponent />, document.getElementById('example-one'));
 }
