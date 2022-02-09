@@ -10,23 +10,11 @@ function ExampleComponentTwo() {
 
     return (
         <>
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-body">
-                                <div>
-                                    I'm another React component built locally in
-                                    this laravel project
-                                </div>
-                                <button onClick={toggle}>
-                                    Toggle react modal
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2>
+                I'm another React component built locally in this laravel
+                project
+            </h2>
+            <button onClick={toggle}>Toggle react modal</button>
 
             {isOpen ? (
                 <div style={myModal}>
